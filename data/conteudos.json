@@ -1,0 +1,14 @@
+[
+  {
+    "categoria": "Documentação Técnica",
+    "titulo": "Configuração PPPoE Mikrotik",
+    "descricao": "Passo a passo para configurar servidor PPPoE.",
+    "link": "pages/documentacao.html#pppoe"
+  },
+  {
+    "categoria": "Ferramentas",
+    "titulo": "Zabbix - Host sem dados",
+    "descricao": "Como identificar e corrigir hosts sem coleta no Zabbix.",
+    "link": "pages/ferramentas.html#zabbix-host"
+  }
+]
