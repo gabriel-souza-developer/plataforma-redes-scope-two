@@ -13,7 +13,7 @@ body.home {
     color: var(--text-light);
     background: var(--bg-gradient);
     overflow-x: hidden;
-    height: auto;
+    height: 100vh;
 }
 
 .home__header {
@@ -54,8 +54,7 @@ body.home {
 
 /* HERO COMPACTO */
 .home__hero {
-    padding-top: 2rem;
-    /* header fixo */
+    padding-top: 4rem;
     padding-bottom: 0.5rem;
 }
 
