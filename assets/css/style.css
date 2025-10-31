@@ -1,214 +1,231 @@
-/* 
-   Base de Conhecimento - Proxxima Telecom
-   Estrutura: BEM + Bootstrap */
-
-
 :root {
-  --primary-color: #20276e;
-  --primary-color-hover: #2b3591;
-  --secondary-color: #cd2784;
-  --text-color: #1e1e1e;
-  --bg-color: #f8f9fa;
-  --border-color: #e0e0e0;
+    --primary-color: #20276E;
+    --secondary-color: #CD2784;
+    --text-light: #F8F9FA;
+    --text-muted: #BFC3CF;
+    --bg-gradient: linear-gradient(135deg, #20276E 0%, #2B3591 50%, #CD2784 100%);
 }
 
-/* ======================
-   Layout geral
-====================== */
-body.app {
-  display: flex;
-  min-height: 100vh;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: "Inter", Arial, sans-serif;
-  overflow: hidden;
+body.home {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    color: var(--text-light);
+    background: var(--bg-gradient);
+    overflow-x: hidden;
+    height: auto;
 }
 
-main.content {
-  flex: 1;
-  overflow-y: auto;
-  height: 100vh;
-  padding: 2rem;
-  padding-bottom: 4rem;
-  background: #fff;
-}
-
-.aside {
-  width: 250px;
-  overflow-y: auto;
-  height: 100vh;
-  background-color: #fafafa;
-  padding: 1.5rem;
-}
-
-/* ======================
-   Sidebar
-====================== */
-.sidebar {
-  width: 260px;
-  background-color: var(--primary-color);
-  color: #fff;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  flex-shrink: 0;
-  overflow-y: auto;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-  transition: left 0.3s ease-in-out;
-}
-
-.sidebar__header img {
-  max-width: 120px;
-}
-
-.sidebar__title {
-  font-size: 0.95rem;
-  letter-spacing: 0.5px;
-  opacity: 0.9;
-}
-
-.sidebar__menu .nav-link {
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 500;
-  border-radius: 6px;
-  padding: 0.6rem 0.9rem;
-  margin-bottom: 4px;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  transition: background-color 0.2s, padding-left 0.2s, box-shadow 0.2s;
-}
-
-.sidebar__menu .nav-link i {
-  width: 18px;
-  height: 18px;
-}
-
-.sidebar__menu .nav-link:hover {
-  background-color: var(--primary-color-hover);
-  color: #fff;
-  padding-left: 1.2rem;
-}
-
-.sidebar__menu .nav-link.active {
-  background-color: var(--secondary-color);
-  color: #fff;
-  box-shadow: inset 3px 0 0 #fff;
-}
-
-/* ======================
-   Conteúdo principal
-====================== */
-.content__header input {
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  transition: 0.2s;
-}
-
-.content__header input:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.15rem rgba(43, 53, 145, 0.2);
-}
-
-.card--category {
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  transition: all 0.25s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.card--category:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-}
-
-.card--category .btn-primary {
-  background-color: var(--primary-color);
-  border: none;
-}
-
-.card--category .btn-primary:hover {
-  background-color: var(--primary-color-hover);
-}
-
-/* ======================
-   Aside (índice da página)
-====================== */
-.aside {
-  border-left: 1px solid var(--border-color);
-}
-
-.aside__title {
-  font-size: 0.85rem;
-  color: var(--primary-color);
-  letter-spacing: 0.5px;
-}
-
-.aside__list {
-  padding-left: 0;
-}
-
-.aside__link {
-  color: var(--text-color);
-  text-decoration: none;
-  display: block;
-  padding: 4px 0;
-  border-left: 2px solid transparent;
-  transition: all 0.2s;
-}
-
-.aside__link:hover {
-  color: var(--primary-color);
-  border-left: 2px solid var(--secondary-color);
-  padding-left: 4px;
-}
-
-/* ======================
-   Scrollbars (estilo fino)
-====================== */
-.sidebar::-webkit-scrollbar,
-.aside::-webkit-scrollbar,
-main.content::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-.sidebar::-webkit-scrollbar-thumb,
-.aside::-webkit-scrollbar-thumb,
-main.content::-webkit-scrollbar-thumb {
-  background-color: rgba(43, 53, 145, 0.25);
-  border-radius: 10px;
-}
-
-.sidebar::-webkit-scrollbar-thumb:hover,
-.aside::-webkit-scrollbar-thumb:hover,
-main.content::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(43, 53, 145, 0.6);
-}
-
-/* ======================
-   Responsividade
-====================== */
-@media (max-width: 992px) {
-  .sidebar {
+.home__header {
     position: fixed;
-    left: -100%;
-    z-index: 1050;
-  }
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    padding: 0.6rem 0;
+}
 
-  .sidebar.active {
-    left: 0;
-    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3);
-  }
+.home__logo {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
 
-  .aside {
-    display: none;
-  }
+.home__logo i {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+}
 
-  main.content {
-    padding: 1.5rem;
-  }
+/* .home__logo--img {
+    width: 30px;
+    height: 30px;
+} */
+
+.home__nav .nav-link {
+    color: var(--text-light);
+    margin: 0 0.5rem;
+    transition: 0.3s;
+}
+
+.home__nav .nav-link:hover {
+    color: var(--secondary-color);
+}
+
+/* HERO COMPACTO */
+.home__hero {
+    padding-top: 2rem;
+    /* header fixo */
+    padding-bottom: 0.5rem;
+}
+
+.home__hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.home__hero-text,
+.home__hero-image {
+    flex: 1 1 50%;
+}
+
+.home__hero-text {
+    text-align: left;
+    margin-left: 5rem;
+}
+
+.home__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.home__subtitle {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.home__slogan {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+.home__illustration {
+    width: 100%;
+    max-width: 300px !important;
+    display: block;
+    margin: 0 3rem;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+.home__btn {
+    background-color: var(--secondary-color);
+    border-radius: 30px;
+    padding: 0.6rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.home__btn:hover {
+    background-color: #e03796;
+    transform: translateY(-2px);
+}
+
+/* CARDS */
+.home__info {
+    padding: 2rem 0 3rem;
+}
+
+.home__card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    color: var(--text-light);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.home__card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.15);
+    /* box-shadow: 0 6px 15px rgba(205,39,132,0.3); */
+}
+
+.home__card-icon {
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+}
+
+.home__card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.home__card-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.8rem;
+}
+
+.home__card-btn {
+    display: inline-block;
+    border-radius: 25px;
+    font-weight: 500;
+    color: #fff;
+    background-color: var(--secondary-color);
+    padding: 0.5rem 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.home__card-btn:hover {
+    background: linear-gradient(90deg, var(--secondary-color) 0%, #e64a9f 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(205, 39, 132, 0.3);
+}
+
+/* FOOTER */
+.home__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-top: 2px solid rgba(0, 0, 0, 0.25);
+    ;
+    border-color: rgba(0, 0, 0, 0.25);
+    color: var(--text-muted);
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 1rem;
+    height: 157px;
+}
+
+.home__footer p {
+    margin: 0;
+}
+
+/* RESPONSIVO */
+@media (max-width: 992px) {
+    .home__hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .home__hero-text {
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .home__illustration {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .home__title {
+        font-size: 2rem;
+    }
+
+    .home__subtitle {
+        font-size: 1.2rem;
+    }
 }
